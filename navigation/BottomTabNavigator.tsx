@@ -1,12 +1,11 @@
-import { Ionicons } from "@expo/vector-icons";
+import { Font5Icon, OcticonIcon } from "../components/Icons";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createStackNavigator } from "@react-navigation/stack";
-import * as React from "react";
-
+import React from "react";
 import Colors from "../constants/Colors";
 import useColorScheme from "../hooks/useColorScheme";
-import { MainTab } from "../screens/TabOneScreen";
-import TabTwoScreen from "../screens/TabTwoScreen";
+import { MainTab } from "../screens/MainTabScreen";
+import TabTwoScreen from "../screens/SettingsTabScreen";
 import {
   BottomTabParamList,
   MainScreenParamList,
@@ -27,9 +26,7 @@ export const BottomTabNavigator = () => {
         name="MainTab"
         component={MainTabNavigator}
         options={{
-          tabBarIcon: ({ color }) => (
-            <TabBarIcon name="ios-code" color={color} />
-          ),
+          tabBarIcon: ({ color }) => <Font5Icon name="gifts" color={color} />,
         }}
       />
       <BottomTab.Screen
@@ -37,18 +34,12 @@ export const BottomTabNavigator = () => {
         component={SettingsTabNavigator}
         options={{
           tabBarIcon: ({ color }) => (
-            <TabBarIcon name="ios-code" color={color} />
+            <OcticonIcon name="settings" color={color} />
           ),
         }}
       />
     </BottomTab.Navigator>
   );
-};
-
-// You can explore the built-in icon families and icons on the web at:
-// https://icons.expo.fyi/
-const TabBarIcon = (props: { name: string; color: string }) => {
-  return <Ionicons size={30} style={{ marginBottom: -3 }} {...props} />;
 };
 
 // Each tab has its own navigation stack, you can read more about this pattern here:
