@@ -1,0 +1,6 @@
+type Gift @model {
+  id: ID!
+  person: String!
+  description: String
+  gifts: [String!]!
+}
