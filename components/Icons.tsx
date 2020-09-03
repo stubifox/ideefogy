@@ -3,11 +3,12 @@
 import { Ionicons } from "@expo/vector-icons";
 import { FontAwesome5 } from "@expo/vector-icons";
 import { Octicons } from "@expo/vector-icons";
+import React from "react";
 
-interface GeneralIconProps {
+type GeneralIconProps = {
   name: string;
   color?: string;
-}
+};
 
 const BottomBarIconStyles = {
   marginBottom: -3,
